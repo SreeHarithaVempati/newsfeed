@@ -1,0 +1,11 @@
+.table-striped{
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 5px 0;
+    box-shadow: (3px 3px 2px #ccc);
+    transition: 0.5s;
+    }
+    .table-striped:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    } 

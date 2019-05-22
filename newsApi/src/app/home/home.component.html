@@ -1,0 +1,121 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+  integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div href="#">
+    <h2><b>News</b></h2>
+  </div>
+  
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav m-auto ">
+      <div class="row ">
+        <form class="form" (ngSubmit)="searchSource(source)" id="sourcesearch">
+          <div class="input-group">
+            <input class="form-control" name="search" type="text" [(ngModel)]="source" placeholder="Search by Newspaper"
+              aria-label="Search"  id="mysearch">
+            <div class="input-group-addon">
+              <button class="btn btn-warning btn-sm" type="submit"  id="searchbtn">
+                <i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </form>
+
+
+      </div>
+    </ul>
+    
+    <ul class="navbar-nav ml-auto">
+      <button type="button" id="historyBtn" class="btn btn-warning" (click)="navigate()"><span
+          class="glyphicon glyphicon-time"></span>Search History <i class='far fa-clock'></i></button>&nbsp;
+      <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-user"></span>Profile <i
+          class='fas fa-user-alt'></i></button>&nbsp;
+      <button type="button" id="logoutbtn" class="btn btn-danger" (click)="logout()">Log Out <i
+          class='fas fa-sign-out-alt'></i></button>
+
+    </ul>
+  </div>
+</nav>
+</header>
+<h1>Welcome to News page!</h1><br>
+<div class="main">
+
+  <div class="row">
+     
+
+<div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">
+    
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+
+      <div class="card-body row no-gutters align-items-center" id="card">
+
+        <div class="col">
+          <form class="form" id="searchArticles">
+            <input class="form-control" name="searchbyarticle" type="text" id="searchKey" [(ngModel)]="search"
+              placeholder="Search topics or keywords">
+          </form>
+        </div>&nbsp;&nbsp;
+        <div class="col-auto">
+          <button class="btn btn-lg btn-success" id="sbtn" (click)="searching(search)">Search <i
+              class="fa fa-search"></i></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="noNews" class="invalid-feedback">
+  <div class="alert alert-danger"> No News For the Search Category </div>
+</div>
+<br>
+<div class="container mx-auto col-lg-9">
+  <div class="row">
+    <div class="card col-lg-4 my-2 shadow-lg" *ngFor="let article of mArticles">
+
+      <img class="card-img-top" src={{article.urlToImage}} alt="">
+      <h4 class="card-title">{{article.title}}</h4>
+      <h6 class="card-subtitle mb-2 text-muted">{{article.source.name}}</h6>
+
+      <div class="card-body">
+        <p>
+          {{article.description}}
+        </p>
+      </div>
+      <a href={{article.url}} target="_blank" class="card-link"><i class="fa fa-eye" id="eye" > Read
+          More...</i></a>
+
+      <br>
+    </div>
+  </div>
+</div>
+<div class="col-lg-3 col-md-2 col-sm-12 col-xs-12">
+    <div class="container">
+        <marquee behavior="alternate" width="180" scrollamunt="1"><b>Favourite News</b> </marquee>
+      <button class="btn btn-primary mx-1 btn-block " type="button" (click)="searching('Cricket news')">Sports</button>
+      <button class="btn btn-primary mx-1 btn-block" type="button" (click)="searching('Tennis news')">Bussiness</button>
+      <button class="btn btn-primary mx-1 btn-block" type="button" (click)="searching('Politics')">Politics </button>
+      
+      <button class="btn btn-primary mx-1 btn-block" type="button" (click)="searching('Crime')">Crime </button>
+      <button class="btn btn-primary mx-1 btn-block" type="button" (click)="searching('Career')">Career  </button>
+      <button class="btn btn-primary mx-1 btn-block" type="button" (click)="searching('Entertainment')">Entertainment </button>
+      <button class="btn btn-primary mx-1 btn-block" type="button" (click)="searching('India')">India </button>
+      <button class="btn btn-primary mx-1 btn-block" type="button" (click)="searching('Health')">Health </button>
+      <button class="btn btn-primary mx-1 btn-block" type="button" (click)="searching('Food')">Food </button>
+      <button class="btn btn-primary mx-1 btn-block" type="button" (click)="searching('Lifestyle')">Lifestyle </button>
+      <button class="btn btn-primary mx-1 btn-block" type="button" (click)="searching('Travel')">Travel </button>
+      <button class="btn btn-primary mx-1 btn-block" type="button" (click)="searching('Jokes')">Jokes </button>
+    </div>
+    </div>
+</div>
+
+
+
+
+</div>

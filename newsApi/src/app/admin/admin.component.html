@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+  integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div href="#">
+    <h2><b>News</b></h2>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav m-auto ">
+      <div class="row ">
+
+        <div class="input-group">
+          <div class="container form-inline md-form form-lg ml-3">
+            <input class="form-control" [(ngModel)]="title" placeholder="Search News Analysts" type="text" aria-label="Search">
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+
+      <button type="button" class="btn btn-success" (click)="ngOnInit()">View Available List <i
+          class='fas fa-user-alt'></i></button>&nbsp;
+      <button type="button" id="blockList" class="btn btn-warning" (click)="getBlockedAnalyst()">View Blocked List <i
+          class='fas fa-user-alt-slash'></i></button>&nbsp;
+
+      <button type="button" id="logout" class="btn btn-danger" (click)="logout()">Log Out <i
+          class='fas fa-sign-out-alt'></i></button>
+
+    </ul>
+  </div>
+</nav>
+<br>
+<h4>News Analysts List</h4><br>
+
+
+
+
+<!-- <table class="table table-striped" id="one">
+  <thead class="thead-light">
+    
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">News Analyst Mail ID</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Availablilty Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of list | filter : title : 'userMailId' ;let j = index;">
+      <th scope="row">{{j+1}}</th>
+      <td>{{i.userMailId}}</td>
+      <td><button type="button" id="delete" *ngIf="i.userAvailabilityStatus" class="btn btn-danger"
+          (click)="deleteAnalyst(i.userMailId)">{{deactivate}}</button>
+        <button type="button" *ngIf="!i.userAvailabilityStatus" class="btn btn-secondary"
+          (click)="reactivateAnalyst(i.userMailId) ">{{reactivate}}</button>
+
+      </td>
+      <td>
+        <button type="button" *ngIf="i.userAvailabilityStatus" class="btn btn-success">Available</button>
+        <button type="button" *ngIf="!i.userAvailabilityStatus" class="btn btn-info"> Not Available</button>
+      </td>
+
+    </tr>
+
+
+  </tbody>
+
+</table> -->
+
+<div class="container mx-auto">
+    <div class="row">
+      <div class="card col-lg-3 my-2 shadow-lg" *ngFor="let i of list | filter : title : 'userMailId';let j = index;">
+  
+        <img class="card-img-top" class="img-circle"src="./assets/images3.png" >
+        <h5 class="card-title">{{i.userName}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{i.userMailId}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">News Analyst</h6>
+  
+        <div class="card-body">
+          <div>
+              <button type="button"  id="delete" *ngIf="i.userAvailabilityStatus" class="btn btn-danger"
+              (click)="deleteAnalyst(i.userMailId,j)">{{deactivate}}</button>
+              
+            </div> 
+          
+            <div>  
+          
+            <button type="button" *ngIf="!i.userAvailabilityStatus" class="btn btn-secondary"
+              (click)="reactivateAnalyst(i.userMailId) ">{{reactivate}}</button>
+             
+            </div>  
+         
+        </div>
+       
+  
+        <br>
+      </div>
+    </div>
+  </div>

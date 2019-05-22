@@ -1,0 +1,91 @@
+.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-form-1{
+    padding: 5%;
+    box-shadow: 3px 5px 8px 6px rgba(0, 1, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    width: 50%;
+    height: 80%;
+    /* background: url('') no-repeat center; */
+    background-size: 50% 80%;
+    
+}
+h2{
+    color: #fff;  
+}
+.login-form-1 h1{
+    text-align: center;
+    color: rgb(10, 48, 175);
+}
+.login-form-2{
+    padding: 5%;
+    background: #0062cc;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+
+}
+.login-form-1{
+    background: #d4d4d4;
+}
+.login-form-2 h4,h5{
+    text-align: center;
+    color: #fff;
+}
+.login-container form{
+    padding: 10%;
+}
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+#regbtn
+  {
+    width: 40%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    
+    border: none;
+    cursor: pointer;
+  }
+  .buttons  #regbtn{
+    font-weight: 600;
+    color: rgb(241, 247, 243);
+    background-color:  #2a9409;
+  
+  }
+  #cancelbtn
+  {
+    width: 40%;
+    border-radius: 1rem;
+    padding: 1.5%;
+  
+    border: none;
+    cursor: pointer;
+   
+  }
+  .buttons  #cancelbtn {
+    font-weight: 600;
+    color: rgb(255, 253, 253);
+    background-color:  #cc1c1c;
+  }
+  #loginbtn
+  {
+    width: 40%;
+    border-radius: 1rem;
+    padding: 1.5%;
+  
+    border: none;
+    cursor: pointer;
+   
+  }
+  .btnn #loginbtn{
+    font-weight: 600;
+    color: rgb(255, 253, 253);
+    background-color:  #543174;
+  }
+
+

@@ -1,0 +1,115 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div href="#">
+        <h2><b>News</b></h2>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav ml-auto">
+        <button type="button" class="btn btn-success">About Us</button>&nbsp;
+        <button type="button" class="btn btn-warning">Contact Us</button>&nbsp;
+
+    </ul>
+    </div>
+
+</nav>
+
+
+
+
+
+<div class="container login-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-3 col-sm-12 col-xs-12  login-form-2">
+                    
+                    <h4 class="align-text-top"><b>Welcome to NEWS Website!</b></h4>
+                    <br><br><br>
+                    <marquee WIDTH="80%">
+                        <img src="../assets/news.png" width="208" height="200" alt="Tutorials ">
+                    </marquee>
+                    <br><br><br><br>
+                    <marquee behavior="alternate" WIDTH="100%"><h5><b>Get registered in our website <br> &nbsp;&nbsp;&nbsp; to view your desired news  in  <br> &nbsp;&nbsp;&nbsp; different publishers across the World!</b></h5></marquee>
+
+
+                </div>
+                <div class="col-md-6 col-md-3 col-sm-12 col-xs-12 login-form-1">
+                        
+                        <h1><b>Register here!</b></h1>
+
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            
+                                <!-- <div *ngIf="!loginStatus">
+                                        <div class="alert alert-danger">Either Email Id or password is Wrong. </div>
+                                        </div>  -->
+                            <div class="form-group" class="font">
+                                <b> <label for="customerName">Full Name</label></b>
+                                <input type="text" formControlName="customerName" placeholder="Your Name" class="form-control"
+                                    id="customerName" [ngClass]="{ 'is-invalid': submitted && f.customerName.errors }" />
+                                <div *ngIf="f.customerName.touched && f.customerName.errors" class="alert alert-danger">
+                                    <div *ngIf="f.customerName.errors.required">Customername is required</div>
+                                    <div *ngIf="f.customerName.errors.minlength">Customername must be at least 5 characters</div>
+            
+                                </div>
+                            </div><br>
+                            <div class="form-group" class="font">
+                                <b> <label for="mailId">Email Id</label></b>
+                                <input type="mail" formControlName="mailId" placeholder="Your Email Id" class="form-control"
+                                    id="mailId" [ngClass]="{ 'is-invalid': submitted && f.mailId.errors }" />
+                                <div *ngIf="f.mailId.touched && f.mailId.errors" class="alert alert-danger">
+                                    <div *ngIf="f.mailId.errors.required">EmailId is required</div>
+                                    <div *ngIf="f.mailId.errors.email">Email format invalid</div>
+                                </div>
+                            </div><br>
+            
+                            <div class="form-group" class="font">
+                                <b><label for="password">Password</label></b>
+                                <input type="password" formControlName="password" placeholder="Your Password" class="form-control"
+                                    id="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                <div *ngIf="f.password.touched && f.password.errors" class="alert alert-danger">
+                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                                </div>
+                            </div><br>
+                             
+                            <div class="form-group" class="font" >
+                            <b><label class="my-1 mr-2" for="inlineFormCustomSelectPref" >Profession</label></b>
+                            <select class="custom-select" id="inlineFormCustomSelectPref" formControlName="profession">
+                            <option value="2"selected >Others</option>
+                            <option value="1">Private Employee</option>
+                            <option value="3">Government Employee</option>
+                            <option value="4">Journalist</option>
+                            <option value="5">Student</option>
+                            </select>
+                            </div> 
+                            <br>
+            
+                            <div class="buttons">
+                                <button id="regbtn">
+                                    <h6> Register</h6>
+                                </button>&nbsp; &nbsp;
+                                <button id="cancelbtn" type="reset" value="Cancel">
+                                    <h6>Cancel</h6>
+                                </button>
+            
+                            </div><br>
+            
+            
+                            <h6><b>Already a Registered User? </b></h6>
+            
+                            <div class="btnn">
+            
+                                <button id="loginbtn" (click)="toLoginPage()">
+                                    <h6>Login</h6>
+                                </button>
+            
+                            </div>
+            
+            
+            
+                        </form>
+                </div>
+            </div>
+        </div>

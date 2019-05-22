@@ -1,0 +1,28 @@
+ .form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#mysearch{
+  padding-left: 20px;
+   border-radius: 40px;
+}
+.input-group-addon{
+  z-index: 3;
+   border-radius: 40px; 
+   background-color: transparent;
+    border:none;
+
+}
+#searchbtn{
+  border-radius: 20px;
+}
+
+#eye{
+  font-size:18px;
+}
